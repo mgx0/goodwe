@@ -51,62 +51,47 @@ class ET(Inverter):
         Voltage("vgrid", 35121, "On-grid L1 Voltage", Kind.AC),
         Current("igrid", 35122, "On-grid L1 Current", Kind.AC),
         Frequency("fgrid", 35123, "On-grid L1 Frequency", Kind.AC),
-        # 35124 reserved
-        PowerS("pgrid", 35125, "On-grid L1 Power", Kind.AC),
+        Power4S("pgrid", 35124, "On-grid L1 Power", Kind.AC),
         Voltage("vgrid2", 35126, "On-grid L2 Voltage", Kind.AC),
         Current("igrid2", 35127, "On-grid L2 Current", Kind.AC),
         Frequency("fgrid2", 35128, "On-grid L2 Frequency", Kind.AC),
-        # 35129 reserved
-        PowerS("pgrid2", 35130, "On-grid L2 Power", Kind.AC),
+        Power4S("pgrid2", 35129, "On-grid L2 Power", Kind.AC),
         Voltage("vgrid3", 35131, "On-grid L3 Voltage", Kind.AC),
         Current("igrid3", 35132, "On-grid L3 Current", Kind.AC),
         Frequency("fgrid3", 35133, "On-grid L3 Frequency", Kind.AC),
-        # 35134 reserved
-        PowerS("pgrid3", 35135, "On-grid L3 Power", Kind.AC),
+        Power4S("pgrid3", 35134, "On-grid L3 Power", Kind.AC),
         Integer("grid_mode", 35136, "Grid Mode code", "", Kind.PV),
         Enum2("grid_mode_label", 35136, GRID_MODES, "Grid Mode", Kind.PV),
-        # 35137 reserved
-        PowerS("total_inverter_power", 35138, "Total Power", Kind.AC),
-        # 35139 reserved
-        PowerS("active_power", 35140, "Active Power", Kind.GRID),
+        Power4S("total_inverter_power", 35137, "Total Power", Kind.AC),
+        Power4S("active_power", 35139, "Active Power", Kind.GRID),
         Calculated("grid_in_out",
                    lambda data: read_grid_mode(data, 35140),
                    "On-grid Mode code", "", Kind.GRID),
         EnumCalculated("grid_in_out_label",
                        lambda data: read_grid_mode(data, 35140), GRID_IN_OUT_MODES,
                        "On-grid Mode", Kind.GRID),
-        # 35141 reserved
-        Reactive("reactive_power", 35142, "Reactive Power", Kind.GRID),
-        # 35143 reserved
-        Apparent("apparent_power", 35144, "Apparent Power", Kind.GRID),
+        Reactive4("reactive_power", 35141, "Reactive Power", Kind.GRID),
+        Apparent4("apparent_power", 35143, "Apparent Power", Kind.GRID),
         Voltage("backup_v1", 35145, "Back-up L1 Voltage", Kind.UPS),
         Current("backup_i1", 35146, "Back-up L1 Current", Kind.UPS),
         Frequency("backup_f1", 35147, "Back-up L1 Frequency", Kind.UPS),
         Integer("load_mode1", 35148, "Load Mode L1"),
-        # 35149 reserved
-        PowerS("backup_p1", 35150, "Back-up L1 Power", Kind.UPS),
+        Power4S("backup_p1", 35149, "Back-up L1 Power", Kind.UPS),
         Voltage("backup_v2", 35151, "Back-up L2 Voltage", Kind.UPS),
         Current("backup_i2", 35152, "Back-up L2 Current", Kind.UPS),
         Frequency("backup_f2", 35153, "Back-up L2 Frequency", Kind.UPS),
         Integer("load_mode2", 35154, "Load Mode L2"),
-        # 35155 reserved
-        PowerS("backup_p2", 35156, "Back-up L2 Power", Kind.UPS),
+        Power4S("backup_p2", 35155, "Back-up L2 Power", Kind.UPS),
         Voltage("backup_v3", 35157, "Back-up L3 Voltage", Kind.UPS),
         Current("backup_i3", 35158, "Back-up L3 Current", Kind.UPS),
         Frequency("backup_f3", 35159, "Back-up L3 Frequency", Kind.UPS),
         Integer("load_mode3", 35160, "Load Mode L3"),
-        # 35161 reserved
-        PowerS("backup_p3", 35162, "Back-up L3 Power", Kind.UPS),
-        # 35163 reserved
-        PowerS("load_p1", 35164, "Load L1", Kind.AC),
-        # 35165 reserved
-        PowerS("load_p2", 35166, "Load L2", Kind.AC),
-        # 35167 reserved
-        PowerS("load_p3", 35168, "Load L3", Kind.AC),
-        # 35169 reserved
-        PowerS("backup_ptotal", 35170, "Back-up Load", Kind.UPS),
-        # 35171 reserved
-        PowerS("load_ptotal", 35172, "Load", Kind.AC),
+        Power4S("backup_p3", 35161, "Back-up L3 Power", Kind.UPS),
+        Power4S("load_p1", 35163, "Load L1", Kind.AC),
+        Power4S("load_p2", 35165, "Load L2", Kind.AC),
+        Power4S("load_p3", 35167, "Load L3", Kind.AC),
+        Power4S("backup_ptotal", 35169, "Back-up Load", Kind.UPS),
+        Power4S("load_ptotal", 35171, "Load", Kind.AC),
         Integer("ups_load", 35173, "Ups Load", "%", Kind.UPS),
         Temp("temperature_air", 35174, "Inverter Temperature (Air)", Kind.AC),
         Temp("temperature_module", 35175, "Inverter Temperature (Module)"),
